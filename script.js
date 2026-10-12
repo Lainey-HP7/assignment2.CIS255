@@ -33,23 +33,18 @@ const Exp2Button = document.querySelector("#read6");
 const Exp2Text = document.querySelector("#text6");
 var clicked6 = false;
 
-//changes the hidden menu display to block instead of none when
-//the mouse hovers over the hamburger menu icon
+//toggles hiddenmenu to display as block or none upon clicking the hamburger menu icon
 hamburger.addEventListener(
-    'mouseover',
+    'click',
     () => {
-        hiddenmenu.style.display = 'block';
+        if (hiddenmenu.style.display == 'none') {
+            hiddenmenu.style.display = 'block';
+        }
+        else {
+            hiddenmenu.style.display = 'none';
+        }
     }
 )
-
-//hides the menu once the mouse hovers off of the menu
-hiddenmenu.addEventListener(
-    'mouseout',
-    () => {
-        hiddenmenu.style.display = 'none';
-    }
-)
-
 
 project1Button.addEventListener(
     'click',
