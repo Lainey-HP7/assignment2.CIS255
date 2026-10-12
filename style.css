@@ -1,0 +1,333 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 12px;
+    --whitish: #f9faf4;
+    --lightyellow: #f3f5da;
+    --blue: #8DA7BE;
+    --navy: #2d2f47;
+}
+
+body {
+    background-color: var(--whitish);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    color: var(--navy);
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1fr 0.2fr;
+    gap: 0.5rem;
+
+    grid-template-areas:
+
+        "header header"
+        "main main"
+        "projects education"
+        "blogs experience"
+        "footer footer"
+
+    ;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: var(--main-padding);
+}
+
+header {
+    grid-area: header;
+    background: var(--blue);
+    display: block;
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    text-align: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+
+    text-align: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 20px;
+}
+
+nav #hamburger {
+    display: none;
+}
+
+nav #hiddenmenu {
+    display: none;
+}
+
+main {
+    grid-area: main;
+    background: var(--navy);
+    color: var(--whitish);
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+
+    display: flex;
+    align-items: center;
+}
+
+main img {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main p#aboutp {
+    margin: 10px;
+    margin-right: 20px;
+    text-indent: 30px;
+}
+
+main h2 {
+    margin: 10px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-size: larger;
+    text-align: center;
+}
+
+main #Name {
+    text-align: center;
+    font-size: large;
+}
+
+#projects {
+    grid-area: projects;
+    background: var(--lightyellow);
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+#projects .info {
+    display: flex;
+    text-align: center;
+}
+
+#projects .title {
+    font-size: larger;
+}
+
+#projects h2 {
+    text-decoration: underline;
+}
+
+#projects p {
+    padding: var(--main-padding);
+}
+
+#projects img {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+}
+
+#education {
+    grid-area: education;
+    background: var(--lightyellow);
+
+    padding: var(--main-padding);
+}
+
+#education h2 {
+    text-decoration: underline;
+}
+
+#education .edu1 {
+    margin-bottom: 50px;
+}
+
+#education .edu2 {
+    margin-bottom: 50px;
+}
+
+#blogs {
+    grid-area: blogs;
+    background: var(--lightyellow);
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+#blogs h2 {
+    text-decoration: underline;
+}
+
+#blogs .articles {
+    display: flex;
+}
+
+#blogs article {
+    border: solid var(--navy);
+    padding: 2px;
+    border-radius: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: var(--navy);
+    color: var(--whitish);
+}
+
+#blogs .blog1 {
+    margin-right: 10px;
+}
+
+#blogs img {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+}
+
+#experience {
+    grid-area: experience;
+    background: var(--lightyellow);
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    padding-bottom: 25px;
+}
+
+#experience h2 {
+    text-decoration: underline;
+}
+
+footer {
+    grid-area: footer;
+    background: var(--blue);
+
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+}
+
+footer .socialLinks {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 20px;
+
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--navy);
+    display: flex;
+}
+
+footer .label {
+    margin-left: 20px;
+    padding-right: 50px;
+    font-size: 17px;
+}
+
+button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--blue);
+    color: var(--navy);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    /* if the screen size is less than 500px 
+    do this */
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1.2fr 1fr 1fr 1fr 1fr 0.2fr;
+        gap: 0.5rem;
+
+
+        grid-template-areas:
+
+            "header"
+            "main"
+            "projects"
+            "education"
+            "blogs"
+            "experience"
+            "footer"
+
+        ;
+    }
+
+    .menu a {
+        display: none;
+    }
+
+    nav #hamburger {
+        display: flex;
+        color: var(--navy);
+    }
+
+    #hamburger a {
+        color: var(--navy);
+    }
+
+    nav #hiddenmenu {
+        position: absolute;
+        background-color: var(--lightyellow);
+        padding: var(--main-padding);
+        border-radius: 15px;
+        right: 7%;
+        top: 5%;
+        border: solid black;
+    }
+
+    nav #hiddenmenu a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: solid var(--blue);
+    }
+
+    nav #hiddenmenu a:last-child {
+        border: none;
+    }
+
+    #projects .right {
+        display: none;
+    }
+
+    #blogs .blog2 {
+        display: none;
+    }
+
+    footer .label {
+        display: none;
+    }
+
+    footer a {
+        border: none;
+    }
+
+    .container p {
+        font-size: 18px;
+    }
+
+    #education li {
+        font-size: 18px;
+    }
+
+}
