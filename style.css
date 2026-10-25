@@ -5,6 +5,8 @@
     --lightyellow: #f3f5da;
     --blue: #8DA7BE;
     --navy: #2d2f47;
+    --darkbeige: #b6b6a7;
+    --darkerbeige: #7a7a70;
 }
 
 body {
@@ -70,29 +72,44 @@ nav #hiddenmenu {
 
 main {
     grid-area: main;
-    background: var(--navy);
-    color: var(--whitish);
+    background: var(--darkbeige);
 
     border-radius: var(--main-radius);
     padding: var(--main-padding);
 
     display: flex;
     align-items: center;
+    
 }
 
 main img {
     padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 150px;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-main p#aboutp {
+main .left {
+    text-align: center;
+    max-width: 350px;
+    min-width: 100px;
+}
+
+main #Name {
+    text-align: center;
+    font-size: larger;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main #aboutp {
     margin: 10px;
+    padding: 10px;
     margin-right: 20px;
     text-indent: 30px;
+    min-height: 100px;
+    
 }
 
 main h2 {
@@ -101,11 +118,6 @@ main h2 {
     text-decoration: underline;
     font-size: larger;
     text-align: center;
-}
-
-main #Name {
-    text-align: center;
-    font-size: large;
 }
 
 #projects {
@@ -134,15 +146,15 @@ main #Name {
 }
 
 #projects img {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-radius: 15px;
+    border: solid var(--darkbeige) 4px;
     width: 150px;
 }
 
 #education {
     grid-area: education;
     background: var(--lightyellow);
+    align-items: center;
 
     padding: var(--main-padding);
 }
@@ -165,6 +177,7 @@ main #Name {
 
     border-radius: var(--main-radius);
     padding: var(--main-padding);
+    align-items: center;
 }
 
 #blogs h2 {
@@ -173,16 +186,16 @@ main #Name {
 
 #blogs .articles {
     display: flex;
+    
 }
 
 #blogs article {
-    border: solid var(--navy);
+    border: solid var(--darkbeige);
     padding: 2px;
     border-radius: 15px;
     text-align: center;
     padding-bottom: 10px;
-    background-color: var(--navy);
-    color: var(--whitish);
+    background-color: var(--darkbeige);
 }
 
 #blogs .blog1 {
@@ -190,10 +203,12 @@ main #Name {
 }
 
 #blogs img {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 150px;
+    border: solid var(--darkerbeige) 5px;
+    border-radius: 15px;
 }
 
 #experience {
@@ -225,7 +240,6 @@ footer .socialLinks {
 
 footer img {
     width: 20px;
-
 }
 
 footer a {
@@ -245,12 +259,11 @@ button {
     background-color: var(--blue);
     color: var(--navy);
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 500px) {
-    /* if the screen size is less than 500px 
-    do this */
-
+    
     .container {
         grid-template-columns: 1fr;
         grid-template-rows: 0.2fr 1.2fr 1fr 1fr 1fr 1fr 0.2fr;
@@ -306,7 +319,11 @@ button {
         border: none;
     }
 
-    #projects .right {
+    main img {
+        width: 90%;
+    }
+
+    #projects .left {
         display: none;
     }
 
@@ -331,3 +348,5 @@ button {
     }
 
 }
+
+
